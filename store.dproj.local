@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.12.16 18:54:56.250.dproj,D:\ibag\D2009\store.dproj=D:\ibag\D2009\store.dproj</Transaction>
+    <Transaction>2010.01.16 15:28:03.953.pas,E:\work\D2009\D2009\Unit17.pas=E:\work\D2009\D2009\AddPackingUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:28:03.953.dfm,E:\work\D2009\D2009\Unit17.dfm=E:\work\D2009\D2009\AddPackingUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:34:34.421.pas,E:\work\D2009\D2009\Unit12.pas=E:\work\D2009\D2009\BagPosUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:34:34.421.dfm,E:\work\D2009\D2009\Unit12.dfm=E:\work\D2009\D2009\BagPosUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:35:10.671.pas,E:\work\D2009\D2009\Unit9.pas=E:\work\D2009\D2009\PriceUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:35:10.671.dfm,E:\work\D2009\D2009\Unit9.dfm=E:\work\D2009\D2009\PriceUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:35:37.453.pas,E:\work\D2009\D2009\Unit1.pas=E:\work\D2009\D2009\MainUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:35:37.453.dfm,E:\work\D2009\D2009\Unit1.dfm=E:\work\D2009\D2009\MainUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:40:51.031.pas,E:\work\D2009\D2009\Unit10.pas=E:\work\D2009\D2009\PricePosUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:40:51.031.dfm,E:\work\D2009\D2009\Unit10.dfm=E:\work\D2009\D2009\PricePosUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:43:37.156.pas,E:\work\D2009\D2009\Unit18.pas=E:\work\D2009\D2009\EnterUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:43:37.156.dfm,E:\work\D2009\D2009\Unit18.dfm=E:\work\D2009\D2009\EnterUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:53:04.250.pas,E:\work\D2009\D2009\Unit11.pas=E:\work\D2009\D2009\FlyListUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:53:04.250.dfm,E:\work\D2009\D2009\Unit11.dfm=E:\work\D2009\D2009\FlyListUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:54:14.203.pas,E:\work\D2009\D2009\Unit14.pas=E:\work\D2009\D2009\NewFlyUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:54:14.203.dfm,E:\work\D2009\D2009\Unit14.dfm=E:\work\D2009\D2009\NewFlyUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:55:27.921.pas,E:\work\D2009\D2009\Unit55.pas=E:\work\D2009\D2009\CnvUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:55:27.921.dfm,E:\work\D2009\D2009\Unit55.dfm=E:\work\D2009\D2009\CnvUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:57:04.906.pas,E:\work\D2009\D2009\Unit88.pas=E:\work\D2009\D2009\WaitTransListUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:57:04.906.dfm,E:\work\D2009\D2009\Unit88.dfm=E:\work\D2009\D2009\WaitTransListUnit.dfm</Transaction>
+    <Transaction>2010.01.16 15:59:55.718.pas,E:\work\D2009\D2009\Unit25.pas=E:\work\D2009\D2009\AddZaklUnit.pas</Transaction>
+    <Transaction>2010.01.16 15:59:55.718.dfm,E:\work\D2009\D2009\Unit25.dfm=E:\work\D2009\D2009\AddZaklUnit.dfm</Transaction>
+    <Transaction>2010.01.16 16:00:39.703.pas,E:\work\D2009\D2009\Unit26.pas=E:\work\D2009\D2009\ShowColumnUnit.pas</Transaction>
+    <Transaction>2010.01.16 16:00:39.703.dfm,E:\work\D2009\D2009\Unit26.dfm=E:\work\D2009\D2009\ShowColumnUnit.dfm</Transaction>
+    <Transaction>2010.01.16 16:23:45.703.pas,E:\work\D2009\D2009\unit19.pas=E:\work\D2009\D2009\ImportUnit.pas</Transaction>
+    <Transaction>2010.01.16 16:23:45.703.dfm,E:\work\D2009\D2009\unit19.dfm=E:\work\D2009\D2009\ImportUnit.dfm</Transaction>
+    <Transaction>2010.01.16 16:25:45.640.pas,E:\work\D2009\D2009\Unit2.pas=</Transaction>
+    <Transaction>2010.01.16 16:25:45.640.dfm,E:\work\D2009\D2009\Unit2.dfm=</Transaction>
+    <Transaction>2010.01.16 16:26:46.375.pas,E:\work\D2009\D2009\Unit3.pas=</Transaction>
+    <Transaction>2010.01.16 16:26:46.375.dfm,E:\work\D2009\D2009\Unit3.dfm=</Transaction>
+    <Transaction>2010.01.16 16:28:52.718.pas,E:\work\D2009\D2009\Unit4.pas=E:\work\D2009\D2009\LoadUnit.pas</Transaction>
+    <Transaction>2010.01.16 16:28:52.718.dfm,E:\work\D2009\D2009\Unit4.dfm=E:\work\D2009\D2009\LoadUnit.dfm</Transaction>
+    <Transaction>2010.01.16 16:30:37.109.pas,E:\work\D2009\D2009\Unit89.pas=E:\work\D2009\D2009\ZaklListUnit.pas</Transaction>
+    <Transaction>2010.01.16 16:30:37.109.dfm,E:\work\D2009\D2009\Unit89.dfm=E:\work\D2009\D2009\ZaklListUnit.dfm</Transaction>
+    <Transaction>2010.01.16 16:32:19.296.pas,E:\work\D2009\D2009\Unit90.pas=E:\work\D2009\D2009\NewZaklUnit.pas</Transaction>
+    <Transaction>2010.01.16 16:32:19.296.dfm,E:\work\D2009\D2009\Unit90.dfm=E:\work\D2009\D2009\NewZaklUnit.dfm</Transaction>
+    <Transaction>2011.12.07 15:41:10.013.pas,\\Pctest-d3d8f20a\data\Source\DECLARANT\Unit17.pas=</Transaction>
+    <Transaction>2011.12.07 15:41:10.013.dfm,\\Pctest-d3d8f20a\data\Source\DECLARANT\Unit17.dfm=</Transaction>
+    <Transaction>2012.12.08 13:09:58.459.pas,D:\Programs\Source\DECLARANT\Unit1.pas=D:\Programs\Source\DECLARANT\funcUnit.pas</Transaction>
+    <Transaction>2013.02.11 20:32:47.993.pas,D:\Programs\Source\DECLARANT\Unit1.pas=D:\Programs\Source\DECLARANT\selectperiodunit.pas</Transaction>
+    <Transaction>2013.02.11 20:32:47.993.dfm,D:\Programs\Source\DECLARANT\Unit1.dfm=D:\Programs\Source\DECLARANT\selectperiodunit.dfm</Transaction>
+    <Transaction>2014.01.23 22:35:48.091.pas,C:\WORK\DOBRO\DECLARANT\Unit1.pas=C:\WORK\DOBRO\DECLARANT\oemcodevokb.pas</Transaction>
+    <Transaction>2014.01.23 22:35:48.091.dfm,C:\WORK\DOBRO\DECLARANT\Unit1.dfm=C:\WORK\DOBRO\DECLARANT\oemcodevokb.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
