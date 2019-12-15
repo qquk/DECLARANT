@@ -129,15 +129,6 @@ type
     procedure price_inv2Change(Sender: TObject);
     procedure totalsumm2KeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure Edit1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure Edit4KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure posprice_weightKeyUp(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
-    procedure Edit3KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure nweightKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure price_invKeyUp(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
-    procedure bagposKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
 
   private
     { Private declarations }
@@ -202,7 +193,7 @@ var
 weight, nettoweight, koef: double;
 f2symb: string;
 begin
-
+//ShowMessage(IntToStr(Opener_price_type));
  if opener_price_type<>4 then
   edit1.SetFocus;
   if opener_price_type=3 then
@@ -224,8 +215,9 @@ begin
  if Opener_price_type<>2 then
   nweight.Text:=flyform.fly_pos.fieldbyname('nweight').asstring;
 
+ culcsumm;
+ edit1.SetFocus;
 
-  edit1.SetFocus;
 
   koef := 0.15;
   f2symb := Copy(packtypes.FieldByName('oemcode').AsString, 1, 2);
@@ -234,28 +226,29 @@ begin
     koef :=  0.177;
   end;
 
-   nweight.Text:= floattostr(roundto(strtofloat(edit3.Text) - koef * strtofloat(edit3.Text)+0.1,0));
-   culcsumm;
+  nweight.Text:= floattostr(roundto(strtofloat(edit3.Text) - koef * strtofloat(edit3.Text)+0.1,0));
+
    if Opener_price_type=7 then  begin
-      nweight.setfocus;
-      nweight.Text:=flyform.fly_pos.fieldbyname('nweight').asstring;
-      edit1.SetFocus;
-   end;
+ nweight.setfocus;
+ nweight.Text:=flyform.fly_pos.fieldbyname('nweight').asstring;
+ edit1.SetFocus;
+  end;
 
-    {weight:=strtofloat(edit3.Text);
-    nettoweight:=strtofloat(nweight.Text);
-    if (weight<>0) and (trim(edit3.Text)<>'') then
+  weight:=strtofloat(edit3.Text);
+  nettoweight:=strtofloat(nweight.Text);
+  if (weight<>0) and (trim(edit3.Text)<>'') then
        label12.Caption:=floattostr(roundto((weight-nettoweight)/weight*100,-1))+'%'
-    else
-      label12.Caption:='0 %';}
+  else
+      label12.Caption:='0 %';
+// culcsumm2;
 
-
+//edit2.Text:=flyform.fly_pos.FieldByName('totalsumm').AsString;
 
  end;
 
 procedure Taddpackingform.nweight2Change(Sender: TObject);
 begin
- //CulcSumm2;
+ CulcSumm2;
 end;
 
 procedure Taddpackingform.nweight2KeyDown(Sender: TObject; var Key: Word;
@@ -283,7 +276,7 @@ end;
 
 procedure Taddpackingform.nweightChange(Sender: TObject);
 begin
-// CulcSumm;
+ CulcSumm;
 end;
 
 procedure Taddpackingform.nweightKeyDown(Sender: TObject; var Key: Word;
@@ -306,12 +299,6 @@ if ord(key)<>vk_back then
     end;
 end;
  if key='.' then key:=',';
-end;
-
-procedure Taddpackingform.nweightKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
- CulcSumm;
 end;
 
 procedure Taddpackingform.SpeedButton1Click(Sender: TObject);
@@ -784,14 +771,14 @@ end;
 
 procedure Taddpackingform.Edit1Change(Sender: TObject);
 begin
- //CulcSumm;
+ CulcSumm;
 
 end;
 
 procedure Taddpackingform.Edit4Change(Sender: TObject);
 begin
- //CulcSumm;
- //CulcSumm2;
+ CulcSumm;
+ CulcSumm2;
 end;
 
 procedure Taddpackingform.Edit4KeyDown(Sender: TObject; var Key: Word;
@@ -815,12 +802,6 @@ end;
  if key='.' then key:=',';
 end;
 
-procedure Taddpackingform.Edit4KeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
- CulcSumm;
-end;
-
 procedure Taddpackingform.Edit1KeyPress(Sender: TObject; var Key: Char);
 begin
   if not (key in ['0'..'9',',','.']) then
@@ -832,12 +813,7 @@ begin
     end;
   end;
  if key='.' then key:=',';
-end;
-
-procedure Taddpackingform.Edit1KeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
- CulcSumm;
+ //CulcSumm;
 end;
 
 procedure Taddpackingform.Edit3KeyPress(Sender: TObject; var Key: Char);
@@ -851,13 +827,6 @@ if ord(key)<>vk_back then
     end;
 end;
  if key='.' then key:=',';
-
-end;
-
-procedure Taddpackingform.Edit3KeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
- CulcSumm;
 end;
 
 procedure Taddpackingform.bagposKeyPress(Sender: TObject; var Key: Char);
@@ -870,13 +839,6 @@ begin
      beep;
     end;
   end;
-
-end;
-
-procedure Taddpackingform.bagposKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
-  CulcSumm;
 end;
 
 procedure Taddpackingform.bagposKeyDown(Sender: TObject; var Key: Word;
@@ -1013,23 +975,23 @@ procedure Taddpackingform.CulcSumm();
    f2symb: string;
  begin
  {}
+ load:=packtypes.FieldByName('load').Value;
+ duty:=packtypes.FieldByName('duty').Value;
+ curs:=flyform.flylist.FieldByName('curs').Value;
+ nds:=flyform.flylist.FieldByName('nds').Value;
 
-  load:=packtypes.FieldByName('load').Value;
-  duty:=packtypes.FieldByName('duty').Value;
-  curs:=flyform.flylist.FieldByName('curs').Value;
-  nds:=flyform.flylist.FieldByName('nds').Value;
 
-
-  if (not edit1.Focused and not nweight.Focused)then
+  koef := 0.15;
+  f2symb := Copy(packtypes.FieldByName('oemcode').AsString, 1, 2);
+  if(f2symb = '64') then
   begin
-    koef := 0.15;
-    f2symb := Copy(packtypes.FieldByName('oemcode').AsString, 1, 2);
-    if(f2symb = '64') then
-    begin
      koef :=  0.177;
-    end;
-    nweight.Text:= floattostr(roundto(strtofloat(edit3.Text) - koef * strtofloat(edit3.Text)+0.1,0));
   end;
+
+if (not nweight.Focused) and (not edit1.Focused) then
+begin
+
+  nweight.Text:= floattostr(roundto(strtofloat(edit3.Text) - koef * strtofloat(edit3.Text)+0.1,0));
 
   weight:=strtofloat(edit3.Text);
   nettoweight:=strtofloat(nweight.Text);
@@ -1037,38 +999,56 @@ procedure Taddpackingform.CulcSumm();
        label12.Caption:=floattostr(roundto((weight-nettoweight)/weight*100,-1))+'%'
   else
       label12.Caption:='0 %';
+//     ShowMessage(nweight.Text);
+
 
   if (edit1.Text<>'') and (edit4.Text<>'')
-    then
+  then begin
+
+  if strtofloat(posprice_weight.Text)<>0 then
+    count:=strtofloat(nweight.Text)
+   else
+    count:=strtofloat(edit1.Text);
+
+
+   if strtofloat(posprice_weight.Text)<>0 then
     begin
-      if strtofloat(edit1.Text)<>0
-      then
-        price_inv.Text:=floattostr(roundto(strtofloat(posprice_weight.Text) * strtofloat(nweight.Text)/strtofloat(edit1.Text),-2));
-            //showMessage(floattostr(strtofloat(posprice_weight.Text) * strtofloat(nweight.Text)/strtofloat(edit1.Text)));
-      if unitcom.ItemIndex=1
-      then
-        edit2.Text:=floattostr(strtofloat(posprice_weight.Text)*strtofloat(nweight.Text))
-      else
-        edit2.Text:=floattostr(strtofloat(price_inv.Text)*strtofloat(edit1.text));
+     edit2.Text:=floattostr(strtofloat(posprice_weight.Text)*count);
+    end
+    else
+     begin
+     edit2.Text:=floattostr(strtofloat(edit4.Text)*count);
+     end;
+
+  if strtofloat(edit1.Text)<>0 then
+    price_inv.Text:=floattostr(roundto(strtofloat(edit2.Text)/strtofloat(edit1.Text),-2));
+
+  if unitcom.ItemIndex=1 then
+      edit2.Text:=floattostr(strtofloat(posprice_weight.Text)*strtofloat(nweight.Text))
+     else
+      edit2.Text:=floattostr(strtofloat(price_inv.Text)*strtofloat(edit1.text));
+
   end
-  else
+ else
   begin
-    edit2.Text:='0';
+   edit2.Text:='0';
   end;
 
-  if addpackingform.Showing then
+ end;
+
+   if addpackingform.Showing then
    begin
-       if trim(edit3.Text)<>''
-       then
+       if trim(edit3.Text)<>'' then
           weight:=strtofloat(edit3.Text)
        else
           weight:=0;
-          nettoweight:=strtofloat(nweight.Text);
 
-          if (weight<>0) and (trim(edit3.Text)<>'') then
-            label12.Caption:=floattostr(roundto((weight-nettoweight)/weight*100,-1))+'%'
-          else
-            label12.Caption:='0 %'
+       nettoweight:=strtofloat(nweight.Text);
+
+       if (weight<>0) and (trim(edit3.Text)<>'') then
+           label12.Caption:=floattostr(roundto((weight-nettoweight)/weight*100,-1))+'%'
+       else
+           label12.Caption:='0 %'
    end;
 
 end;
@@ -1076,7 +1056,7 @@ end;
 procedure Taddpackingform.Edit3Change(Sender: TObject);
 begin
 //speedbutton1.Enabled:=true;
-  //  CulcSumm;
+    CulcSumm;
 end;
 
 
@@ -1084,7 +1064,7 @@ end;
 procedure Taddpackingform.bagposChange(Sender: TObject);
 begin
 //speedbutton1.Enabled:=true;
-//CulcSumm;
+CulcSumm;
 end;
 
 procedure Taddpackingform.Edit5KeyDown(Sender: TObject; var Key: Word;
@@ -1139,13 +1119,6 @@ if ord(key)<>vk_back then
     end;
 end;
  if key='.' then key:=',';
-
-end;
-
-procedure Taddpackingform.price_invKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
- CulcSumm;
 end;
 
 procedure Taddpackingform.poscount2Change(Sender: TObject);
@@ -1178,8 +1151,8 @@ end;
 
 procedure Taddpackingform.posprice_weightChange(Sender: TObject);
 begin
-// CulcSumm;
-// CulcSumm2;
+ CulcSumm;
+ CulcSumm2;
 end;
 
 procedure Taddpackingform.posprice_weightKeyDown(Sender: TObject; var Key: Word;
@@ -1201,12 +1174,6 @@ if ord(key)<>vk_back then
     end;
 end;
  if key='.' then key:=',';
-end;
-
-procedure Taddpackingform.posprice_weightKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
- CulcSumm;
 end;
 
 procedure Taddpackingform.posweight2Change(Sender: TObject);

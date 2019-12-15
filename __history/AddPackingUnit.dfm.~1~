@@ -241,7 +241,6 @@ object addpackingform: Taddpackingform
         OnChange = Edit3Change
         OnKeyDown = Edit3KeyDown
         OnKeyPress = Edit3KeyPress
-        OnKeyUp = Edit3KeyUp
       end
       object Edit4: TEdit
         Left = 109
@@ -263,7 +262,6 @@ object addpackingform: Taddpackingform
         OnChange = Edit4Change
         OnKeyDown = Edit4KeyDown
         OnKeyPress = Edit4KeyPress
-        OnKeyUp = Edit4KeyUp
       end
       object nweight: TEdit
         Left = 388
@@ -285,7 +283,6 @@ object addpackingform: Taddpackingform
         OnChange = nweightChange
         OnKeyDown = nweightKeyDown
         OnKeyPress = nweightKeyPress
-        OnKeyUp = nweightKeyUp
       end
       object custprice: TEdit
         Left = 492
@@ -328,7 +325,6 @@ object addpackingform: Taddpackingform
         OnChange = posprice_weightChange
         OnKeyDown = posprice_weightKeyDown
         OnKeyPress = posprice_weightKeyPress
-        OnKeyUp = posprice_weightKeyUp
       end
       object price_inv: TEdit
         Left = 11
@@ -349,7 +345,6 @@ object addpackingform: Taddpackingform
         Text = '0'
         OnKeyDown = price_invKeyDown
         OnKeyPress = price_invKeyPress
-        OnKeyUp = price_invKeyUp
       end
       object edit2: TEdit
         Left = 109
@@ -410,7 +405,6 @@ object addpackingform: Taddpackingform
         OnChange = bagposChange
         OnKeyDown = bagposKeyDown
         OnKeyPress = bagposKeyPress
-        OnKeyUp = bagposKeyUp
       end
     end
     object Panel3: TPanel
@@ -640,7 +634,6 @@ object addpackingform: Taddpackingform
     OnChange = Edit1Change
     OnKeyDown = Edit1KeyDown
     OnKeyPress = Edit1KeyPress
-    OnKeyUp = Edit1KeyUp
   end
   object packtypes: TIBQuery
     Database = dm.IBDatabase2

@@ -158,7 +158,7 @@ procedure formaddpackexecute(oper: integer);
    addpackingform.Edit3.Text:=flyform.fly_pos.fieldbyname('posweight').asstring;
    addpackingform.Edit2.Text:=flyform.fly_pos.fieldbyname('totalsumm').asstring;
    addpackingform.bagpos.Text:=flyform.fly_pos.fieldbyname('bagpos').asstring;
-   addpackingform.nweight.Text:=flyform.fly_pos.fieldbyname('nweight').asstring;
+//   addpackingform.nweight.Text:=flyform.fly_pos.fieldbyname('nweight').asstring;
    addpackingform.custsumm.Text:=flyform.fly_pos.fieldbyname('totalsummcust').asstring;
    addpackingform.posprice_weight.Text:=flyform.fly_pos.fieldbyname('posprice_weight').asstring;
    addpackingform.price_inv.Text:=flyform.fly_pos.fieldbyname('price_inv').asstring;
