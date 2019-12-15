@@ -135,7 +135,6 @@ type
     printHistoryAct: TAction;
     helper: TIBQuery;
     packtypesPACKPRICE_CUST: TFloatField;
-    Action3: TAction;
     procedure exitExecute(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
@@ -181,7 +180,6 @@ type
     procedure SpeedButton4Click(Sender: TObject);
     procedure printlistactExecute(Sender: TObject);
     procedure printHistoryActExecute(Sender: TObject);
-    procedure Action3Execute(Sender: TObject);
 
 
   private
@@ -1547,46 +1545,6 @@ begin
    end;
    {}
    screen.Cursor:=crDefault;
-end;
-
-procedure Tprice.Action3Execute(Sender: TObject);
-begin
-packpos:=tpackpos.create(application);
-dm.clients.Active:=true;
-    dm.clients.First;
-  while not dm.clients.Eof do begin
-     packpos.cust_com.Items.AddObject(dm.clients.fieldbyname('client_name').Value ,pointer(integer(dm.clients.FieldByName('client_id').Value)));
-     dm.clients.Next;
-   end;
-
- packpos.oemcode.Text := packtypes.FieldByName('oemcode').AsString;
- packpos.packname.Text := packtypes.FieldByName('packtypename').AsString;
- packpos.packtypename_long.Text := packtypes.FieldByName('packtypename_long').AsString;
- packpos.ptitle.Text := packtypes.FieldByName('ptitle').AsString;
- packpos.title_ch.Text := packtypes.FieldByName('title_ch').AsString;
-
- packpos.packprice.Text := packtypes.FieldByName('packprice').AsString;
- packpos.packprice_weight.Text := packtypes.FieldByName('packprice_weight').AsString;
- packpos.duty.Text := packtypes.FieldByName('duty').AsString;
- packpos.load.Text := packtypes.FieldByName('load').AsString;
- packpos.custsumm.Text := packtypes.FieldByName('packprice_cust').AsString;
-
- dm.unittypes.Active:=false;
- dm.unittypes.Active:=true;
- dm.unittypes.First;
- while not dm.unittypes.Eof do begin
-     packpos.unitcom.Items.AddObject(dm.unittypes.fieldbyname('unittitle').Value ,pointer(integer(dm.unittypes.FieldByName('unttype').Value)));
-     dm.unittypes.Next;
-   end;
-packpos.unitcom.ItemIndex:=packpos.unitcom.Items.IndexOfObject(pointer(integer(packtypes.FieldByName('unittype_id').Value)));
-
- if (packtypes.RecordCount=0) then
-  packpos.cust_com.ItemIndex:=0
- else
-  packpos.cust_com.ItemIndex:=packpos.cust_com.Items.IndexOfObject(pointer(integer(packtypes.FieldByName('cust_id').Value)));
-
-  packpos.cust_com.Enabled:=false;
-  packpos.showmodal;
 end;
 
 procedure Tprice.Button1Click(Sender: TObject);

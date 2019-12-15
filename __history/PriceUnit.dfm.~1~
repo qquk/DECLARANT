@@ -739,9 +739,6 @@ object price: Tprice
             ShortCut = 112
           end
           item
-            Action = Action3
-          end
-          item
             Visible = False
             Action = Action1
           end
@@ -789,10 +786,6 @@ object price: Tprice
       Caption = 'new'
       ShortCut = 112
       OnExecute = newExecute
-    end
-    object Action3: TAction
-      Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1087#1086#1076#1086#1073#1085#1099#1081
-      OnExecute = Action3Execute
     end
     object exit: TAction
       Caption = 'exit'
